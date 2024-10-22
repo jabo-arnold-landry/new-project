@@ -1,13 +1,8 @@
 let menuBar = document.querySelector("#menu-bar");
-let navLinks = document.querySelector("#nav-links");
-let cancel = document.querySelector("#cancel");
-let overLay = document.querySelector("#overlay");
-menuBar.addEventListener("click", () => {
-    navLinks.classList.remove("hidden");
-    overLay.classList.toggle("hidden");
-});
+let navLinks = document.querySelectorAll("#nav-link");
 
-cancel.addEventListener("click", () => {
-    navLinks.classList.add("hidden");
-    overLay.classList.toggle("hidden");
+menuBar.addEventListener("click", () => {
+    navLinks.forEach((link) => {
+        link.classList.toggle("hidden");
+    });
 });
